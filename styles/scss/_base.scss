@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 65% 1fr;
+
+    @include breakpoints(980px) {
+        grid-template-columns: 60% 1fr;
+    }
+    
+    @include breakpoints(800px) {
+        grid-template-columns: 55% 1fr;
+    }
+
+    @include breakpoints(700px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+section {
+    padding: 2.5em;
+    @include d-flex(column, center, flex-start);
+
+    @include breakpoints(980px) {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+}
+
+input, button {
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    padding: 1em 2.5em;
+}
+
+a {
+    text-decoration: none;
+}

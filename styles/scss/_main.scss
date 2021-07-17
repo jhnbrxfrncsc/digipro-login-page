@@ -1,0 +1,88 @@
+.main {
+    .title {
+        color: clr(accent-color);
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: weight(bold);
+        letter-spacing: 0.4px;
+        margin-bottom: 2em;
+        
+        @include breakpoints(700px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    form {
+        width: 100%;
+    
+        .form-control {
+            width: 100%;
+            position: relative;
+            margin-bottom: 1.7em;
+
+            input {
+                width: 100%;
+                border-bottom: 1px solid #e6e6e6;
+                color: clr(accent-color);
+
+                & ~ i {
+                    position: absolute;
+                    left: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #888;
+                    @include trans(color);
+                }
+
+                &:focus ~ i {
+                    color: clr(primary-color);
+                }
+
+                & ~ .focused-border {
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    bottom: 0;
+                    background-color: clr(primary-color);
+                    @include trans(width)
+                }
+
+                &:focus  ~ .focused-border{
+                    width: 100%;
+                }
+            }
+        }
+
+        button {
+            &.btn {
+                background-color: clr(primary-color);
+                color: clr(light-color);
+                padding: 1em 3em;
+                margin: 2em auto 4em;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: weight(bold);
+                cursor: pointer;
+                @include trans(background);
+
+                &:hover {
+                    background-color: darken(clr(primary-color), 3%)
+                }
+            }
+        }
+
+        @include breakpoints(700px) {
+            @include d-flex(column, flex-start, flex-start);
+        }
+    }
+
+    .register {
+        a {
+            display: inline-block;
+            margin-left: 0.5em;
+            color: clr(primary-color);
+            font-weight: weight(bold);
+        }
+    }
+}

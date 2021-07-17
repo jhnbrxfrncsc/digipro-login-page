@@ -1,0 +1,48 @@
+.side {
+    background: 
+        linear-gradient(
+            to right,
+            rgba(clr(dark-color), 0.5),
+            rgba(clr(dark-color), 0.3)
+        ),
+        url($image) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    align-items: center;
+
+    // &::before {
+        // content: '';
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        // background-color: rgba($dark-color, 0.6);
+    // }
+
+    p {
+        position: relative;
+        color: clr(light-color);
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.4em;
+        font-size: 1.7rem;
+    }
+
+    .main-msg {
+        text-transform: uppercase;
+        font-size: 3.3rem;
+        font-weight: weight(bold);
+        max-width: 550px;
+        margin-bottom: 3em;
+
+        @include breakpoints(980px) {
+            font-size: 2.7em;
+        }
+    }
+    
+    @include breakpoints(700px) {
+        display: none;
+    }
+}

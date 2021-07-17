@@ -1,0 +1,27 @@
+// Variables
+$image: '../img/cupcake.jpg';
+
+
+// Maps
+$clrs: (
+    "primary-color": #6d3701,
+    "secondary-color": #000,
+    "accent-color": #343434,
+    "light-color": #FFF,
+    "dark-color": #000,
+);
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+
+// Functions
+@function clr($colorName) {
+    @return map-get($clrs, $colorName);
+}
+
+@function weight($weightName){
+    @return map-get($font-weights, $weightName);
+}
